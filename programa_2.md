@@ -5,33 +5,44 @@ classDiagram
         -vector <Auto*> autos 
         -vector <Cliente*> clientes
         +AgenciaRenta(string n)
-        +recibirAtaque(int fuerza)
-        +getPoder() int
-        +getVitalidad() int
-        +getNombre() string
+        +~AgenciaRenta()
+        +void agregarAuto()
+        +void agregarCliente()
+        +void mostrarInfo()
     }
     
     class Contrato {
-        - int resistencia_fuego
-        + recibirAtaque(int fuerza) void
+        -Cliente* cliente
+        - Auto* autoRentado
+        -int dias
+        +Contrato(Cliente*, Auto*, int)
+        +~Contrato()
     }
     
     class Cliente {
-        - int poder_curacion
-        + recibirAtaque(int fuerza) void
+        -int id
+        -string nombre
+        +Cliente(int, string)
+        +~Cliente()
+        +int getId()
+        +string getNombre()
     }
 
 class Auto {
-        -string nombre
-        -vector <Habitación> habitaciones 
-        -vector <Cliente*> clientes
-        + mostrar() void
-        + recibirAtaque(int fuerza)         + getPoder() int
-        + getVitalidad() int
-        + getNombre() string
+        -string placa
+        -string modelo
+        -bool disponible
+        +Auto(string)
+        +~Auto()
+        +string getPlaca()
+        +string getModelo()
+        +bool estaDisponible()
+        +void rentar()
+        +void devolver()
     }
     
     
-    Hotel <|-- Habitación
-    Hotel <|-- Cliente
+    AgenciaRenta <|-- Auto
+    AgenciaRenta <|-- Contrato
+    AgenciaRenta <|-- Cliente
 ```
