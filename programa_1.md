@@ -32,6 +32,6 @@ classDiagram
         +void desocupar()
     }
     
-    Hotel <|-- Habitacion
-    Hotel <|-- Cliente
+    Hotel *-- Habitacion
+    Hotel *-- Cliente
 ```
