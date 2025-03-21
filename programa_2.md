@@ -42,7 +42,8 @@ class Auto {
     }
     
     
-    AgenciaRenta <|-- Auto
-    AgenciaRenta <|-- Contrato
-    AgenciaRenta <|-- Cliente
+    AgenciaRenta o-- Auto
+    AgenciaRenta o-- Cliente
+    Cliente <|-- Contrato
+    Auto <|-- Contrato
 ```
